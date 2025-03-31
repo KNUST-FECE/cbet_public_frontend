@@ -1,0 +1,82 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #d5d5d5;
+    gap: 50px;
+}
+
+.login-container>h1 {
+    font-size: 3rem;
+}
+
+.form-container {
+    margin-inline: auto;
+    display: flex;
+    flex-direction: row;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 55%;
+    background-color: #fff;
+
+}
+.form-left,
+.form-right {
+    width: 50%;
+}
+
+.form-container .form-left img {
+    width: 100%;
+
+}
+
+.form-container .form-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 50px;
+}
+.form-container .form-right p{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.form-container .form-right form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.form-container .form-right form input{
+    background: transparent;
+    height: 50px;
+    border: none;
+    border-bottom: 3px solid #0077ff;
+    outline: none;
+}
+
+.form-container .form-right form input:focus{
+    border-bottom: 3px solid #0077ff;
+}
+.form-container .form-right form button{
+    background-color: #0077ff;
+    color: #fff;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-container .form-right form button:hover{
+    background-color: #005bb5;
+}

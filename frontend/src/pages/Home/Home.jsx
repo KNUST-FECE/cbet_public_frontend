@@ -1,14 +1,27 @@
-import React from 'react'
-import './Home.css'
-import DashboardContainer from '../../dashboardContainer/dashboardContainer'
-import { logos } from '../../assets/assets'
+import React, { useState, useEffect } from 'react';
+import './Home.css';
+import DashboardContainer from '../../dashboardContainer/DashboardContainer';
+import { logos } from '../../assets/assets';
 
 const Home = () => {
+  const [userName, setUserName] = useState('');
+
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    if (storedUser) {
+      const firstName = storedUser.name.split(' ')[0];
+      setUserName(firstName);
+    }
+    if (storedUser) {
+      setUserName(storedUser.name);
+    }
+  }, []);
+
   return (
     <DashboardContainer>
       <div className="welcome-message-container">
         <div className="welcome-text">
-          <h2>Welcome back, Fred 👋</h2>
+          <h2>Welcome back, {userName || 'Guest'} 👋</h2>
           <p>
             This is the Faculty of Electrical and Computer Engineering where you
             find most of our resources
@@ -38,6 +51,6 @@ const Home = () => {
       </div>
     </DashboardContainer>
   );
-}
+};
 
-export default Home
+export default Home;
