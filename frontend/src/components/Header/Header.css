@@ -1,0 +1,125 @@
+.header{
+    padding-top: 30px !important;
+    margin-left: 17%;
+    width: 63%;
+    padding: 0 25px;
+    padding-right: 80px;
+    height: 70px;
+    background-color: #eff6ff;
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+}
+
+.search-bar{
+    background-color: #fff;
+    border-radius: 40px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    max-width: 460px;
+    gap: 5px;
+    padding: 0 25px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    font-family: Outfit;
+    color: #000;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.search-bar input::placeholder {
+    color: #a4a4a4;
+    font-size: 13px;
+    font-family: Outfit;
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.search-bar .search-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+.toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 140px;
+
+    span {
+        margin: 0 0.5rem;
+    }
+
+    input[type="checkbox"] {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+
+        &:checked+label {
+            background: #0077ff;
+        }
+
+        &:checked+label:after {
+            left: calc(100% - 25px);
+            transform: translateX(-100%);
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    label {
+        cursor: pointer;
+        width: 70px;
+        height: 20px;
+        background: rgba(0, 0, 0, 0.27);
+        display: block;
+        border-radius: 40px;
+        position: relative;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 25px;
+            height: 25px;
+            background: #fff;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+    }
+}
+
+/* make the toggle switch a bit more accessible */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+}
